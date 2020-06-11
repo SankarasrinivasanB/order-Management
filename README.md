@@ -3,21 +3,18 @@
 A simple Rest API for order management
 
 ## Technologies Used
-Node.js
-MongoDB
-Express.js
+- Node.js 
+- MongoDB 
+- Express.js
 
 ## Testing Tools
-Mocha
-Chai
+- Mocha 
+- Chai
 
 ## Installations
 
 You need to have Node and NPM installed on your computer.
 
-#### Setup
-
-Installing the project dependencies
  Run the command below
 
   npm install
