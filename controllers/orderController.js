@@ -17,8 +17,14 @@ exports.getAllOrders = async (req,res)=>{
 }
 
 exports.getAOrders = async (req,res) => {
+    const {id} = req.params
+        
+        if(!Number(id)){
+            util.setError(404,"Please enter valid numeric value")
+            return util.send(res)
+        }
+
     try {
-        const {id} = req.params
         const aOrders = await orderService.getAOrders(id);
         if(aOrders){
             util.setSuccess(200,"Retrived a order",aOrders)
@@ -54,6 +60,10 @@ exports.createOrder = async (req,res)=>{
 exports.updateOrder = async (req,res)=>{
     const updateOrderRequest = req.body;
     const { id } = req.params;
+    if(!Number(id)){
+        util.setError(404,"Please enter valid numeric value")
+        return util.send(res)
+    }
     try {
         const updateOrder = await orderService.updateOrder(id,updateOrderRequest)
         if(updateOrder){
@@ -70,6 +80,10 @@ exports.updateOrder = async (req,res)=>{
 
 exports.deleteOrder = async (req,res)=> {
     const { id } = req.params;
+    if(!Number(id)){
+        util.setError(404,"Please enter valid numeric value")
+        return util.send(res)
+    }
     try {
         const deleteOrder = await orderService.deleteOrder(id)
         if(deleteOrder){
