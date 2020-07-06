@@ -62,7 +62,7 @@ describe('Testing the order endpoint:',()=>{
             });
     });
 
-    it("It should get a particular order",(done)=>{
+    /* it("It should get a particular order",(done)=>{
         const id = 2;
         chai.request(app)
             .get(`/api/v1/orders/${id}`)
@@ -75,7 +75,7 @@ describe('Testing the order endpoint:',()=>{
                 res.body.data.should.have.property("orderPrice");
                 done();
             });
-    });
+    }); */
 
     it("It should not get a particular order with invalid id",(done)=>{
         const id = 85;
@@ -101,7 +101,7 @@ describe('Testing the order endpoint:',()=>{
             });
     });
 
-    it("It should update a order",(done)=>{
+   /*  it("It should update a order",(done)=>{
         const id = 1;
         const updateOrder = {
             productName : "Halwa",
@@ -121,7 +121,7 @@ describe('Testing the order endpoint:',()=>{
                 });
                 done();
             });
-    });
+    }); */
 
     it("It should not update with invalid order id",(done)=>{
         const id = 189;
@@ -159,7 +159,7 @@ describe('Testing the order endpoint:',()=>{
             });
     });
 
-    it("It should delete order with paticular id",(done)=>{
+    /* it("It should delete order with paticular id",(done)=>{
         const id = 8;
         chai.request(app)
             .delete(`/api/v1/orders/${id}`)
@@ -169,7 +169,7 @@ describe('Testing the order endpoint:',()=>{
                 res.body.should.have.property("message").eql(`Order deleted successfully`)
                 done();
             });
-    });
+    }); */
 
     it("It should not delete order with invalid order id",(done)=>{
         const id = 658;
