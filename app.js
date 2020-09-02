@@ -12,7 +12,7 @@ config.initDb();
 app.use("/api/v1/orders",routes)
 app.get("*",(req,res)=>{
     res.status(200).send({
-        message : "Welcome to orders management"
+        message : "Welcome to orders management application"
     })
 })
 const PORT = process.env.PORT || 8080;
