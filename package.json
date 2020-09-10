@@ -22,12 +22,26 @@
   },
   "homepage": "https://github.com/sibykarthikeyan/order-managemant#readme",
   "dependencies": {
+    "@sendgrid/mail": "^7.2.0",
+    "amqplib": "^0.5.6",
+    "atob": "^2.1.2",
     "body-parser": "^1.19.0",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
+    "erlang": "^1.0.0",
     "express": "^4.17.1",
+    "express-jwt": "^5.3.3",
+    "google-spreadsheet": "^3.0.11",
+    "jsonwebtoken": "^8.5.1",
     "mocha": "^8.0.1",
-    "mongoose": "^5.9.18"
+    "mongoose": "^5.9.18",
+    "node-cron": "^2.0.3",
+    "node-fetch": "^2.6.0",
+    "nodemailer": "^6.4.10",
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
   }
 }
