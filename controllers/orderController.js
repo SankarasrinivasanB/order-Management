@@ -27,7 +27,7 @@ exports.getAOrders = async (req,res) => {
     try {
         const aOrders = await orderService.getAOrders(id);
         if(aOrders){
-            util.setSuccess(200,"Retrived a order",aOrders)
+            util.setSuccess(200,"Retrived a order",[aOrders])
         }else{
             util.setError(404,`OrderId ${id} doesnot exist to retrive data`)
         }
@@ -49,6 +49,7 @@ exports.createOrder = async (req,res)=>{
     newOrder.orderId = orderId;
     try {
         const createOrder = await orderService.createOrder(newOrder)
+        console.log("rcreatepr",createOrder);
         util.setSuccess(200,"order created Successfully",createOrder)
         return util.send(res)
     } catch(err){   

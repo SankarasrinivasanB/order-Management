@@ -16,14 +16,15 @@ const utils = {
     },
 
     send(res){
-        const result = {
-            status : this.type,
-            message : this.message,
-            data : this.data,
-        };
+        const result = this.data;
     
         if(this.type === "success"){
-            return res.status(this.statusCode).json(result);
+            return res.status(this.statusCode).json({
+                statusCode: this.statusCode,
+                message : this.message,
+                data : this.data,
+        
+            });
         }
     
         return res.status(this.statusCode).json({

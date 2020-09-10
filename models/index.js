@@ -11,5 +11,5 @@ db.url = dbConfig.url;
 
 db.orders = require("./orderModel")(mongoose);
 db.sequenceGenerator = require("./sequenceGeneratorModel")(mongoose);
-
+db.users = require("./userModel")(mongoose);
 module.exports = db;

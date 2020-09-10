@@ -24,6 +24,7 @@ exports.getAOrders = async (id) => {
 
 exports.createOrder = async (newOrder) => {
     try {
+        console.log("neworder service-",newOrder)
         return await order.create(newOrder);
     } catch(err){
         throw err;

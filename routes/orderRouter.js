@@ -1,16 +1,34 @@
 const router = require("express").Router()
 const orderController = require("../controllers/orderController")
+const profileController = require("../controllers/profile")
+const authController = require("../controllers/authenticationController")
 
-router.get("/",orderController.getAllOrders);
+const jwt = require('express-jwt');
+const auth = jwt({
+    secret: 'MY_SECRET',
+    userProperty: 'payload'
+  });
 
-router.get("/:id",orderController.getAOrders);
+router.get("/getAllOrders",auth,orderController.getAllOrders);
 
-router.post("/",orderController.createOrder);
+router.get("/getAOrders/:id",orderController.getAOrders);
 
-router.put("/:id",orderController.updateOrder);
+router.post("/createOrder",orderController.createOrder);
 
-router.delete("/:id",orderController.deleteOrder);
+router.put("/updateOrder/:id",orderController.updateOrder);
 
-router.delete("/",orderController.deleteAllOrders);
+router.delete("/deleteOrder/:id",orderController.deleteOrder);
+
+router.delete("/deleteAllOrders",orderController.deleteAllOrders);
+
+router.get("/profile/:id",auth,profileController.profileRead);
+
+router.post("/register",authController.register);
+
+router.post("/login",authController.login);
+
+router.post("/forgotPassword",authController.forgotPassword);
+
+router.post("/reset/:token",authController.resetPassword);
 
 module.exports = router 

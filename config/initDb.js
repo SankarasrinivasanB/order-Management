@@ -6,7 +6,7 @@ const initialise = {
             useNewUrlParser:true,
             useUnifiedTopology:true
         }).then(()=>{
-            console.log("Database connected successfully")
+            console.log("Database connected successfully",db.url)
         }).catch( err => {
             console.log("Cannot connect to database!",err)
             process.exit()
