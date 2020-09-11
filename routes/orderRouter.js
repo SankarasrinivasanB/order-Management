@@ -9,7 +9,7 @@ const auth = jwt({
     userProperty: 'payload'
   });
 
-router.get("/getAllOrders",auth,orderController.getAllOrders);
+router.get("/getAllOrders",orderController.getAllOrders);
 
 router.get("/getAOrders/:id",orderController.getAOrders);
 
@@ -21,7 +21,7 @@ router.delete("/deleteOrder/:id",orderController.deleteOrder);
 
 router.delete("/deleteAllOrders",orderController.deleteAllOrders);
 
-router.get("/profile/:id",auth,profileController.profileRead);
+router.get("/profile/:id",profileController.profileRead);
 
 router.post("/register",authController.register);
 

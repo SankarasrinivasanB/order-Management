@@ -20,17 +20,17 @@ app.use(passport.initialize());
 app.use("/api/v1/orders",routes)
 
 // catch 404 and forward to error handler
-app.use((req, res, next) => {
+/* app.use((req, res, next) => {
   next(createError(404));
-});
+}); */
 
 // Catch unauthorised errors
-app.use((err, req, res) => {
+/* app.use((err, req, res) => {
   if (err.name === 'UnauthorizedError') {
     res.status(401);
     res.json({ message: `${err.name}: ${err.message}` });
   }
-});
+}); */
 app.get("*",(req,res)=>{
     res.status(200).send({
         message : "Welcome to orders management"
